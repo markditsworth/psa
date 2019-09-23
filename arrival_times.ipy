@@ -1,0 +1,9 @@
+# coding: utf-8
+import numpy as np
+from scipy.stats import erlang
+lambda_e = 2.
+lambda_d = 8.
+third_ele_times = erlang.rvs(3,scale=1/lambda_e,size=5000000)
+ninth_deer_times = erlang.rvs(9,scale=1/lambda_d,size=5000000)
+diff = third_ele_times - ninth_deer_times
+len(np.where(diff<0)[0])/5000000.
